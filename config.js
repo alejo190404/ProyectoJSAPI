@@ -5,4 +5,4 @@ const config = {
     MONGO_PASSWWORD : process.env.MONGO_PASSWWORD
 }
 
-module.exports = config
+module.exports = config;
