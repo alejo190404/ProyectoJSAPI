@@ -5,12 +5,11 @@ const mongoDB = new MongoDB();
 
 router.get("/", async (req, res, next) => {
     console.log("Estamos en el primer MD")
-    const dataa = await mongoDB.insertOne("users", {nombre: "Fercho Barón"})
-    const data = await mongoDB.getAll("users")
+    const data = await mongoDB.insertOne("users", {username: "parcero"})
     const results = [];
-    for await (const doc of data){
+    /*for await (const doc of data){
         results.push(doc);
-    }
+    }*/
     res.status(200).json({
         results
     })
