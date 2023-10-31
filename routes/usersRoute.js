@@ -5,7 +5,7 @@ const mongoDB = new MongoDB();
 
 router.get("/", async (req, res, next) => {
     console.log("Estamos en el primer MD")
-    const data = await mongoDB.replaceOne("users", {correo: "xXx@hotmail.com"})
+    const data = await mongoDB.deleteMany("users", {nombre: "cualquiera"})
     const results = [];
     /*for await (const doc of data){
         results.push(doc);
