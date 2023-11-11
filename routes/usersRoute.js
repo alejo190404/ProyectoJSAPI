@@ -2,8 +2,10 @@ const express = require("express")
 const router = express.Router();
 const MongoDB = require("../lib/mongo");
 const mongoDB = new MongoDB();
+const passport = require('passport');
+require('../utils/auth/jwt');
 
-router.get("/", async (req, res, next) => {
+router.get("/", passport.authenticate('jwt', {session: false}), async (req, res, next) => {
     console.log("Estamos en el primer MD")
     const data = await mongoDB.getAll("users")
     const results = [];

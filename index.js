@@ -11,6 +11,10 @@ const authRouter = require('./routes/authRoute');
 app.use('/users', usersRouter)
 app.use('/auth', authRouter)
 
+app.use((err, req, res, next) => {
+    res.status(404).json(err);
+})
+
 app.listen(3000, () => {
     console.log("El servidor está escuchando en http://localhost:3000")
 })
