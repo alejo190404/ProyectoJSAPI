@@ -10,9 +10,11 @@ app.use(express.json())
 
 const usersRouter = require('./routes/usersRoute');
 const authRouter = require('./routes/authRoute');
+const chatRouter = require('./routes/chatRoute');
 
 app.use('/users', usersRouter)
 app.use('/auth', authRouter)
+app.use('/auth', chatRouter)
 
 app.use((err, req, res, next) => {
     res.status(404).json(err);
