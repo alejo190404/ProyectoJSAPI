@@ -14,7 +14,7 @@ const chatRouter = require('./routes/chatRoute');
 
 app.use('/users', usersRouter)
 app.use('/auth', authRouter)
-app.use('/auth', chatRouter)
+app.use('/chat', chatRouter)
 
 app.use((err, req, res, next) => {
     res.status(404).json(err);

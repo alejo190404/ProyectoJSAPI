@@ -6,7 +6,6 @@ const passport = require('passport');
 require('../utils/auth/jwt');
 
 router.get("/", passport.authenticate('jwt', {session: false}), async (req, res, next) => {
-    console.log("Estamos en el primer MD")
     const data = await mongoDB.getAll("users")
     const results = [];
     for await (const doc of data){
