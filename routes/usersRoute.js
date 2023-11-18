@@ -23,7 +23,7 @@ router.get("/:id", passport.authenticate('jwt', {session: false}), async (req, r
     })
 })
 
-router.post("/", passport.authenticate('jwt', {session: false}), async (req, res, next) => {
+router.post("/", async (req, res, next) => {
     const result = await mongoDB.insertOne("users", req.body)
     return res.status(200).json({
         result
